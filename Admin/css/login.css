@@ -1,0 +1,106 @@
+.signContainer {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.signContainer img {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+.signContainer .formContainer {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signContainer .formContainer form {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fff;
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.4);
+}
+.signContainer .formContainer form span {
+  color: red;
+}
+.signContainer .formContainer form input,
+.signContainer .formContainer form textarea,
+.signContainer .formContainer form select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+  font-size: 16px;
+}
+.signContainer .formContainer form input:focus {
+  border: 1px solid #f4762d;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+.signContainer .formContainer form [type="submit"] {
+  width: auto;
+  padding: 11px 55px;
+  cursor: pointer;
+  background-color: #f4762d;
+  color: #fff;
+  transition: 0.5s;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+.signContainer .formContainer form [type="submit"]:hover {
+  background-color: #fff;
+  border: 1px solid #f4762d;
+  color: #f4762d;
+  transform: translateX(10px);
+}
+.signContainer .formContainer form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 20px;
+  border: #f4762d 1px solid;
+  cursor: pointer;
+  color: #f4762d;
+  position: relative;
+  gap: 10px;
+  z-index: 12;
+  align-self: flex-start;
+  transition: 0.5s;
+}
+.signContainer .formContainer form label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #f4762d;
+  transition: 0.5s;
+  z-index: -1;
+}
+.signContainer .formContainer form label:hover {
+  color: #fff;
+}
+.signContainer .formContainer form label:hover::before {
+  width: 100%;
+}
+.signContainer .formContainer form [type="date"] {
+  color: gray;
+}

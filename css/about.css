@@ -1,0 +1,36 @@
+.about-container{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    padding: 100px 0 50px;
+}
+
+.vision,
+.mission{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    width: 90vw;
+    flex-wrap: wrap;
+}
+
+.txt{
+    margin: 50px;
+}
+
+.vision p,
+.mission p{
+    width: 300px;
+    margin-top: 30px;
+}
+
+
+.vision img,
+.mission img{
+    width: 300px;
+    border-radius: 10px;
+}

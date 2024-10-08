@@ -1,0 +1,59 @@
+.singleTripContainer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 100px 0;
+}
+.singleTripContainer h1 {
+  font-size: 50px;
+}
+.singleTripContainer .tripData {
+  width: 90%;
+  min-height: calc(100vh - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.singleTripContainer .tripData img {
+  width: 500px;
+  height: 600px;
+  object-fit: cover;
+}
+.singleTripContainer .tripData .singleTripDetails {
+  width: 500px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: left;
+  gap: 20px;
+}
+.singleTripContainer .tripData .singleTripDetails h1 {
+  color: #2b2b2b;
+  font-size: 32px;
+}
+.singleTripContainer .tripData .singleTripDetails p {
+  color: grey;
+}
+.singleTripContainer .singleTripGallery {
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.singleTripContainer .singleTripGallery img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+}

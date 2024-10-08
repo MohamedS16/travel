@@ -1,0 +1,223 @@
+.placesContainer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 80px 0;
+}
+.placesContainer h1 {
+  font-weight: 900;
+  font-size: 40px;
+}
+.placesContainer .places {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.placesContainer .places .place {
+  width: 600px;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+.placesContainer .places .place img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+.placesContainer .places .place:hover img {
+  transform: scale(1.2);
+}
+.placesContainer .places .place:hover .placeData {
+  opacity: 1;
+}
+.placesContainer .places .placeData {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #ffd68a93, #773a177f);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.5s;
+  opacity: 0;
+}
+.placesContainer .places .placeData h3 {
+  font-size: 40px;
+  font-weight: 900;
+  color: #fff;
+}
+.placesContainer .places .placeData a {
+  padding: 10px 60px;
+  color: #fff;
+  border: 1px solid #f4762d;
+  transition: 0.5s;
+  background-color: #f4762d;
+  font-size: 20px;
+}
+.placesContainer .places .placeData a:hover {
+  transform: translateX(5px);
+  color: #fff;
+  border-color: #fff;
+  background-color: transparent;
+}
+
+/* ------------------------------------------- */
+
+.tripsTitle {
+  width: 100%;
+  margin-top: 80px;
+  padding: 20px 0;
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../../../Images/status.jpg) fixed no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+/* .tripsTitle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #ffd68a93, #773a177f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tripsTitle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #ffd68a93, #773a177f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  font-weight: 900;
+  color: #fff;
+} */
+.tripsTitle h1 {
+  font-size: 70px;
+  color: #2b2b2b;
+  font-weight: 900;
+  /* text-shadow: 5px 5px 20px rgba(0,0,0,0.3); */
+}
+.tripsContainer {
+  width: 90%;
+  margin: 50px auto;
+  min-height: 30vh;
+  /* background-color: red; */
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.tripsContainer .trip {
+  width: 600px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid rgba(0, 0, 0, 0.6); */
+  box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  gap: 20px;
+  padding: 10px;
+}
+.tripsContainer .trip img {
+  width: 250px;
+  height: 100%;
+  object-fit: cover;
+}
+.tripsContainer .trip .tripData {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 100%;
+  gap: 30px;
+  width: 350px;
+}
+.tripsContainer .trip .tripData p {
+  text-align: left;
+}
+
+.tripsContainer .trip .tripData a {
+  color: #f4762d;
+  background-color: transparent;
+  padding: 10px 40px;
+  border: 1px solid #f4762d;
+  transition: 0.5s;
+  position: relative;
+  z-index: 1;
+}
+.tripsContainer .trip .tripData a:hover {
+  color: #fff;
+}
+.tripsContainer .trip .tripData a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f4762d;
+  z-index: -1;
+  width: 0;
+  height: 100%;
+  transition: 0.5s;
+}
+.tripsContainer .trip .tripData a:hover::before {
+  width: 100%;
+  z-index: -1;
+}
+@media screen and (max-width: 1367px) {
+  .tripsContainer .trip {
+    width: 450px;
+  }
+  .tripsContainer .trip .tripData {
+    width: 200px;
+  }
+  .tripsContainer .trip .tripData a {
+    padding: 10px 30px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .tripsContainer .trip {
+    width: 100%;
+    height: 350px;
+  }
+  .tripsContainer .trip img {
+    width: 400px;
+  }
+  .tripsContainer .trip .tripData {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .tripsContainer .trip img {
+    width: 270px;
+  }
+}
