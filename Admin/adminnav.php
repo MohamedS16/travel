@@ -14,14 +14,9 @@
                 <a href="dashboard.php">Dashboard</a>
             </li>
             <li>
-                <a href="addplace.php">Add Place</a>
-            </li>
-            <li>
                 <a href="addtrip.php">Add Trip</a>
             </li>
-            <li>
-                <a href="viewplaces.php">Show Places</a>
-            </li>
+
             <li>
                 <a href="viewtrips.php">Show Trips</a>
             </li>
@@ -43,6 +38,7 @@
 <?php
 if (isset($_POST['logout'])) {
     session_destroy();
+    header('Location: /travel/login.php');
 }
 ?>
 <script>

@@ -41,8 +41,7 @@
   gap: 30px;
 }
 .container .dashboard a {
-  width: 500px;
-  padding: 60px 0;
+  padding: 40px 20px;
   text-align: center;
   border: 1px solid orangered;
   background-color: transparent;
@@ -104,4 +103,8 @@
 .success-message .done a:hover {
   background-color: orangered;
   color: #fff;
+}
+
+.addTripContainer{
+  min-height: 110vh !important;
 }

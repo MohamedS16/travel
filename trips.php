@@ -4,7 +4,6 @@ require('conn.php');
 $selectQuery = "SELECT * FROM `trips`";
 $selectDone = mysqli_query($conn, $selectQuery);
 $trips = mysqli_fetch_all($selectDone);
-
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +16,7 @@ $trips = mysqli_fetch_all($selectDone);
         <link rel="stylesheet" href="css/nav.css">
         <link rel="stylesheet" href="css/places.css">
         <link rel="stylesheet" href="css/footer.css">
-    <title>Trips</title>
+        <title>Trips</title>
 </head>
 
 <body>
@@ -28,15 +27,15 @@ $trips = mysqli_fetch_all($selectDone);
 
     <section class="tripsContainer">
         <?php
-        foreach ($trips as $trip) {
+
+foreach ($trips as $trip) {
+            $tripimgs = explode(' ', $trip[3]);
             // $tripImages = json_decode($trip[7]);
         ?>
             <div class="trip">
-                <img src="Admin/<?php echo $tripImages[0]; ?>" alt="" />
+                <img src="<?php echo $tripimgs[0]; ?>" alt="" />
                 <div class="tripData">
                     <h2><?php echo $trip[1] ?></h2>
-                    <span>EGP <?php echo $trip[2]; ?></span>
-                    <p><?php echo $trip[3]; ?></p>
                     <a href="singletrip.php?trip=<?php echo $trip[0]; ?>">Read More</a>
                 </div>
             </div>

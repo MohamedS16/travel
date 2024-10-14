@@ -12,7 +12,7 @@ if (!isset($_SESSION['admin'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/adminnav.css" />
         <link rel="stylesheet" href="css/admin.css" />
-        <title>Document</title>
+        <title>Admin Dashboard</title>
     </head>
 
     <body>
@@ -21,14 +21,9 @@ if (!isset($_SESSION['admin'])) {
         ?>
         <div class="container">
             <div class="dashboard">
-                <a href="addplace.php">
-                    Add Place
-                </a>
+                
                 <a href="addtrip.php">
                     Add Trip
-                </a>
-                <a href="viewplaces.php">
-                    View Places
                 </a>
                 <a href="viewtrips.php">
                     View Trips

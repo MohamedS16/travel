@@ -12,15 +12,11 @@ if (isset($_SESSION['admin'])) { ?>
                 <li>
                     <a href="Admin/dashboard.php">Home</a>
                 </li>
-                <li>
-                    <a href="Admin/addplace.php">Add Place</a>
-                </li>
+
                 <li>
                     <a href="Admin/addtrip.php">Add Trip</a>
                 </li>
-                <li>
-                    <a href="Admin/showplaces.php">Show Places</a>
-                </li>
+
                 <li>
                     <a href="Admin/showtrips.php">Show Trips</a>
                 </li>

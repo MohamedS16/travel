@@ -4,7 +4,9 @@ $tripId = $_GET['trip'];
 $selectQuery = "SELECT * FROM `trips` WHERE `tid` = '$tripId'";
 $selectDone = mysqli_query($conn, $selectQuery);
 $trip = mysqli_fetch_assoc($selectDone);
-$tripImages = json_decode($trip['timgs']);
+$description = explode('*',$trip['tdesc']);
+$images = explode(' ', $trip['timgs']);
+// $tripImages = json_decode($trip['timgs']);
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +19,7 @@ $tripImages = json_decode($trip['timgs']);
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/singletrip.css">
     <link rel="stylesheet" href="css/footer.css">
-    <title><?php if(isset($trip)){echo $trip['name'];} ?></title>
+    <title><?php if(isset($trip)){echo $trip['tname'];} ?></title>
 </head>
 
 <body>
@@ -25,28 +27,28 @@ $tripImages = json_decode($trip['timgs']);
     include("nav.php");
     ?>
     <section class="singleTripContainer">
-        <h1><?php echo $trip['tname'] ?></h1>
         <div class="tripData">
-            <img src="Admin/<?php echo $tripImages[0]; ?>" alt="" />
+            <img src="<?= $images[0] ?>" alt="Main Image" />
             <div class="singleTripDetails">
-                <h1><?php echo $trip['tname']; ?></h1>
-                <h3>Place: <?php echo $trip['tplace']; ?></h3>
-                <p>
-                    <?php echo $trip['tdesc']; ?>
-                </p>
-                <h3>EGP <?php echo $trip['tprice']; ?></h3>
-                <span><b>Trip Guide:</b> <?php echo $trip['tguide']; ?></span>
-                <span><b>Trip Category:</b><?php echo $trip['tcat']; ?></span>
-                <span><b>Trip date:</b><?php echo $trip['tdate']; ?></span>
-                <!-- <button>Book Now</button> -->
+                <h1><?= $trip['tname'] ?></h1>
+                <?php  foreach($description as $item){?> <p> <?= $item ?> </p>  <?php } ?>
+                <h3>Book Now Through :</h3>
+                <div class="booking-ways">
+                    <a href="#" title="Message ON Facebook"> <img src="./Images/facebook.png" alt="FaceBook"> </a>
+                    <a href="#" title="Message On Whatsapp"> <img src="./Images/whatsapp.png" alt="WhatsApp"> </a>
+                    <a href="#" title="Contact Form"> <img src="./Images/exam.png" alt="Form"> </a>
+                </div>
             </div>
         </div>
-        <div class="singleTripGallery">
+        <div class="trip-images">
+            <h2>More Images</h2>
+            <div class="singleTripGallery">
             <?php
-            foreach ($tripImages as $image) { ?>
-                <img src="Admin/<?php echo $image ?>" alt="">
+            foreach ($images as $image) { ?>
+                <img src="<?= $image ?>" alt="">
             <?php }
             ?>
+            </div>
         </div>
     </section>
     <?php
