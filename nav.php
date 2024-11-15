@@ -1,4 +1,14 @@
 <?php
+    ini_set('session.cookie_secure', 1);  // Ensure cookies are sent over HTTPS
+    header("Content-Security-Policy: default-src 'self'; script-src 'self' https://apis.google.com;");
+    // Set security headers
+    header("X-Content-Type-Options: nosniff");
+    header("X-Frame-Options: DENY");
+    header("Strict-Transport-Security: max-age=31536000; includeSubDomains");
+
+
+    ini_set('session.cookie_httponly', 1);  // Prevent JavaScript access to session cookie
+
 if (isset($_SESSION['admin'])) { ?>
     <header>
         <nav>
@@ -23,7 +33,7 @@ if (isset($_SESSION['admin'])) { ?>
             </ul>
             <?php
             if (isset($_SESSION['admin'])) { ?>
-                <form method="post">
+                <form method="post" action="index.php">
                     <input type="submit" value="Logout" name="logout">
                 </form>
             <?php }
@@ -43,7 +53,7 @@ if (isset($_SESSION['admin'])) { ?>
 <?php   } else { ?>
     <header>
         <nav>
-            <img src="images/Assets/logo2 (1).png" alt="">
+            <img src="Images/Assets/logo2 (1).png" alt="">
             <ul>
                 <li>
                     <a href="index.php">Home</a>

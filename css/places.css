@@ -44,6 +44,195 @@
   object-fit: cover;
 }
 .tripsContainer .trip .tripData {
+  max-width: 250px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  gap: 30px;
+  padding: 30px;
+}
+.tripsContainer .trip .tripData p {
+  text-align: left;
+}
+
+.tripsContainer .trip .tripData a {
+  color: #f4762d;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: 1px solid #f4762d;
+  transition: 0.5s;
+  position: relative;
+  z-index: 1;
+}
+.tripsContainer .trip .tripData a:hover {
+  color: #fff;
+}
+.tripsContainer .trip .tripData a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f4762d;
+  z-index: -1;
+  width: 0;
+  height: 100%;
+  transition: 0.5s;
+}
+.tripsContainer .trip .tripData a:hover::before {
+  width: 100%;
+  z-index: -1;
+}
+
+
+@media screen and (max-width: 750px) {
+  .tripsContainer .trip img {
+    width: 250px;
+  }
+}
+.tripsTitle {
+  width: 100%;
+  margin-top: 80px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../../../Images/status.jpg) fixed no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+
+.tripsTitle h1 {
+  font-size: 70px;
+  color: #2b2b2b;
+  font-weight: 900;
+}
+
+.tripsContainer {
+  width: 90%;
+  margin: 50px auto;
+  min-height: 100vh;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.tripsContainer .trip {
+  max-width: 600px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0px 10px 0px 0px;
+}
+.tripsContainer .trip img {
+  width: 250px;
+  height: 100%;
+  object-fit: cover;
+}
+.tripsContainer .trip .tripData {
+  max-width: 250px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  gap: 30px;
+  padding: 30px;
+}
+.tripsContainer .trip .tripData p {
+  text-align: left;
+}
+
+.tripsContainer .trip .tripData a {
+  color: #f4762d;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: 1px solid #f4762d;
+  transition: 0.5s;
+  position: relative;
+  z-index: 1;
+}
+.tripsContainer .trip .tripData a:hover {
+  color: #fff;
+}
+.tripsContainer .trip .tripData a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f4762d;
+  z-index: -1;
+  width: 0;
+  height: 100%;
+  transition: 0.5s;
+}
+.tripsContainer .trip .tripData a:hover::before {
+  width: 100%;
+  z-index: -1;
+}
+
+
+@media screen and (max-width: 750px) {
+  .tripsContainer .trip img {
+    width: 250px;
+  }
+}
+.tripsTitle {
+  width: 100%;
+  margin-top: 80px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../../../Images/status.jpg) fixed no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+
+.tripsTitle h1 {
+  font-size: 70px;
+  color: #2b2b2b;
+  font-weight: 900;
+}
+
+.tripsContainer {
+  width: 90%;
+  margin: 50px auto;
+  min-height: 100vh;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.tripsContainer .trip {
+  max-width: 600px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0px 10px 0px 0px;
+}
+.tripsContainer .trip img {
+  width: 250px;
+  height: 100%;
+  object-fit: cover;
+}
+.tripsContainer .trip .tripData {
+  max-width: 250px;
   display: flex;
   justify-content: center;
   flex-direction: column;

@@ -34,9 +34,9 @@ $images = explode(' ', $trip['timgs']);
                 <?php  foreach($description as $item){?> <p> <?= $item ?> </p>  <?php } ?>
                 <h3>Book Now Through :</h3>
                 <div class="booking-ways">
-                    <a href="#" title="Message ON Facebook"> <img src="./Images/facebook.png" alt="FaceBook"> </a>
-                    <a href="#" title="Message On Whatsapp"> <img src="./Images/whatsapp.png" alt="WhatsApp"> </a>
-                    <a href="#" title="Contact Form"> <img src="./Images/exam.png" alt="Form"> </a>
+                    <a href="#" title="Message ON Facebook" target="_blank" > <img src="./Images/facebook.png" alt="FaceBook"> </a>
+                    <a href="https://wa.me/+201124449731" target="_blank" title="Message On Whatsapp"> <img src="./Images/whatsapp.png" alt="WhatsApp"> </a>
+                    <a href="./contact.php" target="_blank" title="Contact Form"> <img src="./Images/exam.png" alt="Form"> </a>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@ $images = explode(' ', $trip['timgs']);
             <h2>More Images</h2>
             <div class="singleTripGallery">
             <?php
-            foreach ($images as $image) { ?>
+            foreach ($images as $image) {?>
                 <img src="<?= $image ?>" alt="">
             <?php }
             ?>
@@ -57,3 +57,6 @@ $images = explode(' ', $trip['timgs']);
 </body>
 
 </html>
+
+
+

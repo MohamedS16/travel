@@ -59,19 +59,19 @@ session_start();
 
             <div class="servicem-container">
                 <div class="servicem">
-                    <img src="images/hieroglyph.png" alt="">
+                    <img src="Images/hieroglyph.png" alt="">
                     <p>Check our Trips Page</p>
                 </div>
                 <div class="servicem">
-                    <img src="images/choice.png" alt="">
+                    <img src="Images/choice.png" alt="">
                     <p>Choose Your Desired Trip</p>
                 </div>
                 <div class="servicem">
-                    <img src="images/contact-information.png" alt="">
+                    <img src="Images/contact-information.png" alt="">
                     <p>Contact Us To Reserve Your Trip</p>
                 </div>
                 <div class="servicem">
-                    <img src="images/magic-wand.png" alt="">
+                    <img src="Images/magic-wand.png" alt="">
                     <p>And The Rest Is Magic</p>
                 </div>
             </div>
@@ -109,14 +109,14 @@ session_start();
     <section class="gallery">
             <h2 class="sec-title"> Gallery </h2>
             <div class="images">
-                <img src="ancient-images/pexels-alex-azabache-3214970.jpg" alt="" class="gsora">
-                <img src="ancient-images/pexels-alex-azabache-3214972.jpg" alt="" class="gsora">
-                <img src="ancient-images/pexels-antonio-filigno-10287305.jpg" alt="" class="gsora">
-                <img src="ancient-images/pexels-antonio-filigno-10287306.jpg" alt="" class="gsora">
-                <img src="ancient-images/pexels-yasmine-qasem-2034684.jpg" alt="" class="gsora">
-                <img src="ancient-images/pexels-spencer-davis-4353815.jpg" alt="" class="gsora">
-                <img src="ancient-images/pexels-roxanne-shewchuk-2184580.jpg" class="gsora">
-                <img src="ancient-images/homebg.jpg" alt="" class="gsora">
+                <img src="./ancient-Images/pexels-alex-azabache-3214970.jpg" alt="Image" class="gsora">
+                <img src="./ancient-Images/pexels-alex-azabache-3214972.jpg" alt="Image" class="gsora">
+                <img src="./ancient-Images/pexels-antonio-filigno-10287305.jpg" alt="Image" class="gsora">
+                <img src="./ancient-Images/pexels-antonio-filigno-10287306.jpg" alt="Image" class="gsora">
+                <img src="./ancient-Images/pexels-yasmine-qasem-2034684.jpg" alt="Image" class="gsora">
+                <img src="./ancient-Images/pexels-spencer-davis-4353815.jpg" alt="Image" class="gsora">
+                <img src="./ancient-Images/pexels-roxanne-shewchuk-2184580.jpg" alt="Image" class="gsora">
+                <img src="./ancient-Images/homebg.jpg" alt="Image" class="gsora">
             </div>
         </section>
 
@@ -126,4 +126,4 @@ session_start();
     ?>
 </body>
 
-</html>
+</html> 

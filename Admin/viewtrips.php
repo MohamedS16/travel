@@ -25,13 +25,8 @@ if (!isset($_SESSION['admin'])) {
             <tr>
                 <th>Trip ID</th>
                 <th>Trip Name</th>
-                <th>Trip Price</th>
-                <th>Trip Category</th>
                 <th>Trip Description</th>
-                <th>Trip Guide</th>
-                <th>Trip Date</th>
                 <th>Trip Images</th>
-                <th>Trip Place</th>
                 <th>Delete</th>
                 <th>Update</th>
             </tr>
@@ -40,24 +35,20 @@ if (!isset($_SESSION['admin'])) {
             $selectDone = mysqli_query($conn, $selectQuery);
             $data = mysqli_fetch_all($selectDone);
             foreach ($data as $trip) {
-                $tripSwr = json_decode($trip[7])
+                // $tripSwr = json_decode($trip[7])
             ?>
                 <tr>
                     <td><?php echo $trip[0]; ?></td>
                     <td><?php echo $trip[1]; ?></td>
                     <td><?php echo $trip[2]; ?></td>
-                    <td><?php echo $trip[3]; ?></td>
-                    <td><?php echo $trip[4]; ?></td>
-                    <td><?php echo $trip[5]; ?></td>
-                    <td><?php echo $trip[6]; ?></td>
+
                     <td>
                         <?php
-                        foreach ($tripSwr as $tripSora) { ?>
+                        foreach (explode(' ',$trip[3]) as $tripSora) { ?>
                             <img style="width: 150px; height:150px" src="<?php echo $tripSora ?>" alt="">
                         <?php }
                         ?>
                     </td>
-                    <td><?php echo $trip[8] ?></td>
                     <td>
                         <form method="post">
                             <input type="hidden" value="<?php echo $trip[0]; ?>" name="delId">

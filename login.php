@@ -1,6 +1,10 @@
 <?php
 require('conn.php');
 ob_start();
+
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32)); // Generate a random token
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,35 +26,37 @@ ob_start();
         $email = htmlspecialchars($_POST['email']);
         $pw = htmlspecialchars($_POST['pw']);
         $err = [];
-        if ($email == '' && $pw == '') {
-            $err['loginerror'] = "Fields are required";
-        } else {
+        if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            die('CSRF token mismatch');
+        }
             if ($email === "rania@gmail.com") {
-                if ($pw === "123") {
+                if ($pw === "123abc123") {
                     session_start();
                     $_SESSION['admin'] = ['email' => $email, 'name' => "Rania"];
-                    header('location: Admin/dashboard.php');
+                    header('Location: Admin/dashboard.php');
                 } else {
                     $err['wrongpw'] = "Wrong Password";
                 }
             } else {
                 $err['emailerr'] = "Wrong Email";
             }
-        }
+        
     }
     ?>
 
     <section class="signContainer">
         <img src='Images/Home/bg2.jpg' alt="" />
         <div class="formContainer">
-            <form method="post">
+            <form method="post" action="login.php" >
                 <h1>Sign in</h1>
+                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+
                 <?php
                 if (isset($err['loginerr'])) { ?>
                     <span><?php echo $err['loginerr']; ?></span>
                 <?php }
                 ?>
-                <input type="email" placeholder="Email" name="email" value="<?php if (isset($email)) {
+                <input type="email" required placeholder="Email" name="email" value="<?php if (isset($email)) {
                                                                                 echo $email;
                                                                             } ?>" />
                 <?php
@@ -58,7 +64,7 @@ ob_start();
                     <span><?php echo $err['emailerr']; ?></span>
                 <?php }
                 ?>
-                <input type="password" placeholder="Password" name="pw" value="<?php if (isset($pw)) {
+                <input type="password" required placeholder="Password" name="pw" value="<?php if (isset($pw)) {
                                                                                     echo $pw;
                                                                                 } ?>" />
                 <?php

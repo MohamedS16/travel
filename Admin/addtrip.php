@@ -1,6 +1,9 @@
 <?php
 require('../conn.php');
 session_start();
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32)); // Generate a random token
+}
 if (!isset($_SESSION['admin'])) {
     echo "Please login as an admin";
 } else { ?>
@@ -20,7 +23,11 @@ if (!isset($_SESSION['admin'])) {
         <?php
         include('adminnav.php');
         
+           
         if (isset($_POST['addtrip'])) {
+        if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            die('CSRF token mismatch');
+        }
             $tname = htmlspecialchars($_POST['tname']);
             $tdesc = htmlspecialchars($_POST['tdesc']);
             $timgs = htmlspecialchars($_POST['timgs']);
@@ -44,6 +51,7 @@ if (!isset($_SESSION['admin'])) {
                 <form method="post">
 
                     <h1>Add Trip</h1>
+                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 
                     <input required type="text" placeholder="Trip Name" name="tname" />
                     <textarea required type="text" placeholder="Trip Description" name="tdesc"></textarea>

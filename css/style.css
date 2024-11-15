@@ -538,6 +538,8 @@ body{
   font-size: 56px;
   font-weight: 800;
   margin-bottom: 50px;
+      text-align: center
+
 
 }
 
@@ -553,6 +555,8 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+    text-align: center
+
 }
 
 .servicem-container {
@@ -562,6 +566,7 @@ body{
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  text-align: center
 }
 
 .servicem {
@@ -574,6 +579,8 @@ body{
   min-height: 170px;
   padding: 40px 30px;
   border-radius: 10px;
+    text-align: center
+
 
 }
 

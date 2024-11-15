@@ -3,6 +3,15 @@
         <span>
             Welcome
             <?php
+            ini_set('session.cookie_secure', 1);  // Ensure cookies are sent over HTTPS
+            header("Content-Security-Policy: default-src 'self'; script-src 'self' https://apis.google.com;");
+            // Set security headers
+            header("X-Content-Type-Options: nosniff");
+            header("X-Frame-Options: DENY");
+            header("Strict-Transport-Security: max-age=31536000; includeSubDomains");
+
+
+            ini_set('session.cookie_httponly', 1);  // Prevent JavaScript access to session cookie
             echo $_SESSION['admin']['name'];
             ?>
         </span>
@@ -38,7 +47,7 @@
 <?php
 if (isset($_POST['logout'])) {
     session_destroy();
-    header('Location: /travel/login.php');
+    header('Location: /login.php');
 }
 ?>
 <script>

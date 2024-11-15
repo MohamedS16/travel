@@ -8,23 +8,23 @@
         </p>
         <ul>
             <li>
-                <a href="">
-                    <FaFacebook size={30" color="#fff" />
+                <a href="#">
+                    <FaFacebook size="30" color="#fff" />
                 </a>
             </li>
             <li>
-                <a href="">
-                    <FaFacebook size={30" color="#fff" />
+                <a href="#">
+                    <FaFacebook size="30" color="#fff" />
                 </a>
             </li>
             <li>
-                <a href="">
-                    <FaFacebook size={30" color="#fff" />
+                <a href="#">
+                    <FaFacebook size="30" color="#fff" />
                 </a>
             </li>
             <li>
-                <a href="">
-                    <FaFacebook size={30" color="#fff" />
+                <a href="#">
+                    <FaFacebook size="30" color="#fff" />
                 </a>
             </li>
         </ul>

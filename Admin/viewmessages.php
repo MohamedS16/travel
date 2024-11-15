@@ -26,6 +26,7 @@ if (!isset($_SESSION['admin'])) {
                 <th>Message ID</th>
                 <th>Full Name</th>
                 <th>Email</th>
+                <th>Mobile</th>
                 <th>Message</th>
                 <th>Delete</th>
                 <th>Read</th>
@@ -36,7 +37,7 @@ if (!isset($_SESSION['admin'])) {
             $data = mysqli_fetch_all($selectDone);
             foreach ($data as $message) {
             ?>
-                <tr style="<?php switch ($message[4]) {
+                <tr style="<?php switch ($message[5]) {
                                 case '1':
                                     echo "background-color: rgba(255, 0, 0, 0.359)";
                                     break;
@@ -47,6 +48,7 @@ if (!isset($_SESSION['admin'])) {
                     <td><?php echo $message[0]; ?></td>
                     <td><?php echo $message[1]; ?></td>
                     <td><?php echo $message[2]; ?></td>
+                    <td><?php echo $message[4] ?></td>
                     <td><?php echo $message[3] ?></td>
                     <td>
                         <form method="post">
